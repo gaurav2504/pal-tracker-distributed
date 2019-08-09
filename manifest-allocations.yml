@@ -2,7 +2,7 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-pal-gaurav12.cfapps.io
+  - route: allocations-pal-gaurav121.cfapps.io
   memory: 1G
   instances: 1
   env:
