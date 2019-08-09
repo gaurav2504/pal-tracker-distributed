@@ -15,9 +15,18 @@ dependencies {
     testCompile project(":components:test-support")
     compile "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:$springSecurityOAuthAutoconfigVersion"
     compile "io.pivotal.spring.cloud:spring-cloud-sso-connector:$springCloudSsoVersion"
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client"
 }
 dependencyManagement {
     imports {
         mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:$springCloudServicesClientLibrariesVersion"
     }
 }
+
+bootRun.environment([
+        "REGISTRATION_SERVER_ENDPOINT": "http://registration-server",
+])
+
+test.environment([
+        "REGISTRATION_SERVER_ENDPOINT": "http://registration-server",
+])
